@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <div class="container-fluid h-100 mx-auto">
+        <p> view records </p>
+    </div>
+    {% for record in records %}
+        <div class="record">
+            <p><b>{{ record.title }}</b></p>
+            <div>
+                Start Date: {{ record.date_start }}
+                Finish Date: {{ record.date_finish }}
+                Duration: {{ record.duration }}
+            </div>
+            <div>
+                <p>{{ record.description }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
