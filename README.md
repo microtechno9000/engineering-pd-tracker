@@ -20,8 +20,26 @@ add features
 ## Requirements
 
 - Ubuntu Server 20.04 or Ubuntu Desktop 20.04 onwards
+- python requirements detailed within the requirements file
 
 
 ## Install
 
 Install steps in here
+1. Clone the github repo
+
+`cd /opt`
+
+`sudo mkdir epdtracker`
+
+<u>Note: </u> depending on the /opt ownership setup, the 'epdtracker' folder will need to be changed to the current user and group.
+
+`git clone https://github.com/microtechno9000/engineering-pd-tracker.git epdtracker`
+
+3. Install requirements
+
+`sudo pip3 install -r requirements.txt `
+
+4. Run EPDTracker
+
+`python3 tracker.py`
