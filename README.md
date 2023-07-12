@@ -36,10 +36,10 @@ Install steps in here
 
 `git clone https://github.com/microtechno9000/engineering-pd-tracker.git epdtracker`
 
-3. Install requirements
+2. Install requirements
 
 `sudo pip3 install -r requirements.txt `
 
-4. Run EPDTracker
+3. Run EPDTracker
 
 `python3 tracker.py`
