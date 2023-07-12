@@ -1,7 +1,7 @@
 """record support tables
 
 Revision ID: 844ad9855c6a
-Revises: 
+Revises:
 Create Date: 2023-07-06 12:50:15.780912
 
 """
