@@ -1,0 +1,48 @@
+name: "Quality Checks"
+
+# run on main on new PRs
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+######
+# CodeQL check using https://codeql.github.com/
+# readme at https://github.com/github/codeql-action
+######
+jobs:
+  CodeQL-Check:
+    name: Analyze
+    runs-on: ubuntu-latest
+
+    permissions:
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # set the language, override the default
+        language: ['python']
+
+    steps:
+    # https://github.com/actions/checkout
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Initializes the CodeQL tools for scanning.
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: ${{ matrix.language }}
+
+    # Autobuild attempts to build any compiled languages (C/C++, C#, Go, or Java).
+    # If this step fails, then you should remove it and run the build manually (see below).
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v2
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
