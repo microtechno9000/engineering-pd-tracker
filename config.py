@@ -10,7 +10,7 @@ class Config:
     API_KEY = environ.get('API_KEY')
     SECRET_KEY = environ.get('API_KEY')
     SQLALCHEMY_DATABASE_URI = environ.get('DATABASE_URI') \
-                              or 'sqlite:///' + path.join(basedir, 'db/app.db')
+        or 'sqlite:///' + path.join(basedir, 'db/app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     server_ip = "127.0.0.1"
