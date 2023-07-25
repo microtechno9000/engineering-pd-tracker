@@ -4,19 +4,25 @@
 
 {% block content %}
     <div class="container-fluid h-100 mx-auto">
-        <p> view records </p>
+        <p>Add a new record: <a href="record-add">Enter Training</a> </p>
+        {% if records: %}
+            {% for record in records %}
+                <div class="record">
+                    <p><b>{{ record.title }}</b></p>
+                    <div>
+                        Start Date: {{ record.date_start }}
+                        Finish Date: {{ record.date_finish }}
+                        Duration: {{ record.duration }}
+                    </div>
+                    <div>
+                        <p>{{ record.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else: %}
+            <div class="record">
+                No records present, maybe you need some training!
+            </div>
+        {% endif %}
     </div>
-    {% for record in records %}
-        <div class="record">
-            <p><b>{{ record.title }}</b></p>
-            <div>
-                Start Date: {{ record.date_start }}
-                Finish Date: {{ record.date_finish }}
-                Duration: {{ record.duration }}
-            </div>
-            <div>
-                <p>{{ record.description }}</p>
-            </div>
-        </div>
-    {% endfor %}
 {% endblock %}
