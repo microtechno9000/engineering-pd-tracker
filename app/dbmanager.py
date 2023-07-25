@@ -7,13 +7,7 @@ import flask_migrate
 
 def check_init(app):
     if check_database(app):
-        if check_database_current(app):
-            # no update
-            # logger output all good
-            random_value = "do nothing"
-        else:
-            # update db
-            # logger output doing things
+        if not check_database_current(app):
             update_database(app)
     else:
         # create db file
@@ -62,6 +56,7 @@ def create_database(app):
     alembic_dir = app.config.get('migrations')
     with app.app_context():
         flask_migrate.upgrade(alembic_dir)
+
 
 def update_database(app):
     """
