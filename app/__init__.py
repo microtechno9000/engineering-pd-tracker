@@ -1,10 +1,9 @@
-import logging
 from flask import Flask
 
 from config import Config
 from app.extensions import db
-from app.extensions import alembic
 from app.extensions import migrate
+from app.dbmanager import check_init
 
 
 def create_app(config_class=Config):
@@ -16,6 +15,9 @@ def create_app(config_class=Config):
     db.init_app(app)
     # alembic.init_app(app)
     migrate.init_app(app, db)
+
+    # check database is current
+    check_init(app)
 
     # update the database
     # with app.app_context():

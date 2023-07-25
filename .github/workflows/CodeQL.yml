@@ -1,4 +1,4 @@
-name: "Quality Checks"
+name: "CodeQL bot"
 
 # run on main on new PRs
 on:
