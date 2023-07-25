@@ -7,16 +7,39 @@
         <p> view records </p>
     </div>
     {% for record in records %}
-        <div class="record">
-            <p><b>{{ record.title }}</b></p>
-            <div>
-                Start Date: {{ record.date_start }}
-                Finish Date: {{ record.date_finish }}
-                Duration: {{ record.duration }}
+        <div class="card" style="width: 80%">
+            <div class="card-header">
+                {{ record.title }}
             </div>
-            <div>
-                <p>{{ record.description }}</p>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">
+                    Organisation |
+                    Activity |
+                    EA Division |
+                    Training Type
+                </h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <u>Start Date:</u> {{ record.date_start }} |
+                        <u>Finish Date:</u> {{ record.date_finish }} |
+                        <u>Duration:</u> {{ record.duration }}
+                    </li>
+                    <li class="list-group-item">
+                        <u>Risk:</u> {{ record.duration_risk }} |
+                        <u>Business:</u> {{ record.duration_business }} |
+                        <u>Related Practice:</u> {{ record.duration_practice }}
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="mb-2 text-muted"> Description </h6>
+                        <p class="card-text">{{ record.description }}</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="mb-2 text-muted"> Notes </h6>
+                        <p class="card-text">users notes</p>
+                    </li>
+                </ul>
             </div>
         </div>
+        <br>
     {% endfor %}
 {% endblock %}

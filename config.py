@@ -13,6 +13,8 @@ class Config:
         or 'sqlite:///' + path.join(basedir, 'db/app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    migrations = path.join(basedir, "migrations")
+
     server_ip = "127.0.0.1"
     server_port = "7070"
     flask_debug = True

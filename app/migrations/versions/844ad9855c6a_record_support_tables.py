@@ -30,8 +30,22 @@ def upgrade() -> None:
         sa.Column('description', sa.String(500)),
         sa.Column('conditions', sa.String(500))
     )
+    op.create_table(
+        'training_provider',
+        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('name', sa.String(100)),
+        sa.Column('notes', sa.String(500))
+    )
+    op.create_table(
+        'training_location',
+        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('location', sa.String(100)),
+        sa.Column('notes', sa.String(500))
+    )
 
 
 def downgrade() -> None:
     op.drop_table('training_activity')
     op.drop_table('training_type')
+    op.drop_table('training_provider')
+    op.drop_table('training_location')
