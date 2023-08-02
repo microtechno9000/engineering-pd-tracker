@@ -6,5 +6,5 @@ from app.extensions import db
 
 class TrainingActivity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    activity = db.Column(db.string)
-    description = db.Column(db.string)
+    activity = db.Column(db.String)
+    description = db.Column(db.String)
