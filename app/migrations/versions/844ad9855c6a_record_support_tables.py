@@ -42,6 +42,11 @@ def upgrade() -> None:
         sa.Column('location', sa.String(100)),
         sa.Column('notes', sa.String(500))
     )
+    op.create_table(
+        'training_eadivision',
+        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('division', sa.String(100))
+    )
 
 
 def downgrade() -> None:
