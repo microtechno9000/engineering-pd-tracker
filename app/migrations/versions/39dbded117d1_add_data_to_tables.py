@@ -6,9 +6,8 @@ Create Date: 2023-07-28 12:31:25.665683
 
 """
 from alembic import op
-import sqlalchemy as sa
+from sqlalchemy import Integer, String, delete
 from sqlalchemy.sql import table, column
-from sqlalchemy import Integer, String
 
 # revision identifiers, used by Alembic.
 revision = '39dbded117d1'
@@ -18,9 +17,7 @@ depends_on = None
 
 
 def upgrade() -> None:
-    '''
-    Load in the training activity data
-    '''
+    # Load in the training activity data
 
     training_activity = table(
         'training_activity',
@@ -34,7 +31,7 @@ def upgrade() -> None:
         "Exhibition",
         "Meeting",
         "Mentoring Session",
-        "Online Study"
+        "Online Study",
         "Other",
         "Presentation / Paper Preparation",
         "Private Study - book / manual",
@@ -52,19 +49,18 @@ def upgrade() -> None:
 
     activity_data = []
     for index, activity_name in enumerate(activity_list, start=1):
-        activity = {}
-        activity["id"] = index
-        activity["activity"] = activity_name
-        activity["description"] = "Training activity covering " + activity_name
+        activity = {
+            "id": index,
+            "activity": activity_name,
+            "description": "Training activity covering " + activity_name
+        }
         activity_data.append(activity)
 
     op.bulk_insert(
         training_activity, activity_data
     )
 
-    '''
-    Load in the training activity data
-    '''
+    # Load in the training type data
     training_type = table(
         'training_type',
         column('id', Integer),
@@ -125,22 +121,21 @@ def upgrade() -> None:
 
     type_data = []
     for index, type_row in enumerate(type_list, start=1):
-        type = {}
-        type["id"] = index
-        type["type"] = type_row[0]
-        type["description"] = type_row[1]
-        type["conditions"] = type_row[2]
-        type_data.append(type)
+        eatype = {
+            "id": index,
+            "type": type_row[0],
+            "description": type_row[1],
+            "conditions": type_row[2]
+        }
+        type_data.append(eatype)
 
     op.bulk_insert(
         training_type, type_data
     )
 
-    '''
-    Load in the training EA Division
-    '''
-    training_eadivision = table(
-        'training_eadivision',
+    # Load in the training EA Division
+    training_division = table(
+        'training_division',
         column('id', Integer),
         column('division', String)
     )
@@ -161,15 +156,36 @@ def upgrade() -> None:
 
     division_data = []
     for index, division_row in enumerate(division_list, start=1):
-        division = {}
-        division["id"] = index
-        division["division"] = division_row
+        division = {
+            "id": index,
+            "division": division_row
+        }
         division_data.append(division)
 
     op.bulk_insert(
-        training_eadivision, division_data
+        training_division, division_data
     )
 
 
 def downgrade() -> None:
-    pass
+    training_activity = table(
+        'training_activity',
+        column('id', Integer),
+        column('activity', String),
+        column('description', String)
+    )
+    training_type = table(
+        'training_type',
+        column('id', Integer),
+        column('type', String),
+        column('description', String),
+        column('conditions', String)
+    )
+    training_division = table(
+        'training_division',
+        column('id', Integer),
+        column('division', String)
+    )
+    delete(training_activity).where(training_activity.id == "*")
+    delete(training_type).where(training_type.id == "*")
+    delete(training_division).where(training_division.id == "*")

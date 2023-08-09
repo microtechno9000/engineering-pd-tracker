@@ -1,5 +1,6 @@
 """
 Model for the Training Activity table
+- the type of training i.e. Presentation, workshop
 """
 from app.extensions import db
 

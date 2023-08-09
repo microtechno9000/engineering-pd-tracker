@@ -1,5 +1,6 @@
 """
 Model for the Training Type table
+- The EA Training Type (1 through 6)
 """
 from app.extensions import db
 

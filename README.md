@@ -8,7 +8,7 @@
 
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django)](https://github.com/microtechno9000/engineering-pd-tracker)
 
-The Engineering Professional Development Tracker (EPDTracker) is an easy to use web application for tracking proffesional development hours to maintain compliance to or for Engineers Australia Charted Engineering.
+The Engineering Professional Development Tracker (EPDTracker) is an easy-to-use web application for tracking proffesional development hours to maintain compliance to or for Engineers Australia Charted Engineering.
 EPDTracker is designed to minimise the overhead in tracking courses, books, YouTube videos, Podcasts or any other media, keeping the focus on the training not on record keeping.
 As the tool develops, additional features will be added automatically import training from various sources. At present the tracker reports on manually entered data.
 
@@ -24,7 +24,7 @@ As the tool develops, additional features will be added automatically import tra
 
 - **Auto Fill training data:** Auto fill training data specific training organisations or types, saving time
 
-- **Auto import from Youtube:** From YouTube history, select and add watched videos into the training records
+- **Auto import from YouTube:** From YouTube history, select and add watched videos into the training records
 
 - **Auto import from Podcast:** Based on an RSS feed, auto import podcasts once listened
 
@@ -45,7 +45,7 @@ Requires python and flask to run, follow the installation instructions below.
 ## Install
 
 Install steps in here
-1. Clone the github repo
+1. Clone the gitHub repo
 
 `cd /opt`
 
