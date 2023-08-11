@@ -4,7 +4,8 @@
 
 {% block content %}
     <div class="container-fluid h-100 mx-auto p-4">
-        <form>
+        <form method="POST">
+            {{ form.csrf_token }}
             <div class="form-group row">
                 <label for="recordTitle" class="col-sm-2 col-form-label">
                     Title
@@ -87,19 +88,19 @@
                     Risk Management
                 </label>
                 <div class="col-sm-2">
-                    <input type="time" class="form-control" id="recordTimeRisk">
+                    <input type="number" class="form-control" id="recordTimeRisk" min="0" max="200">
                 </div>
                 <label for="recordTimeMgmt" class="col-sm-2 col-form-label">
                     Business Management
                 </label>
                 <div class="col-sm-2">
-                    <input type="time" class="form-control" id="recordTimeMgmt">
+                    <input type="number" class="form-control" id="recordTimeMgmt" min="0" max="200">
                 </div>
                 <label for="recordTimeAop" class="col-sm-2 col-form-label">
                     Area of Practice
                 </label>
                 <div class="col-sm-2">
-                    <input type="time" class="form-control" id="recordTimeAop">
+                    <input type="number" class="form-control" id="recordTimeAop" min="0" max="200">
                 </div>
             </div>
             <div class="form-group row">

@@ -4,12 +4,14 @@ from config import Config
 from app.extensions import db
 from app.extensions import migrate
 from app.dbmanager import check_init
+from app.extensions import csrf
 
 
 def create_app(config_class=Config):
     # create and configure the app
     app = Flask(__name__)
     app.config.from_object(config_class)
+    csrf.init_app(app)
 
     # Initialise Flask Extensions
     db.init_app(app)
