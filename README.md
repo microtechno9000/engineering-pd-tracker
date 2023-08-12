@@ -8,7 +8,7 @@
 
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django)](https://github.com/microtechno9000/engineering-pd-tracker)
 
-The Engineering Professional Development Tracker (EPDTracker) is an easy-to-use web application for tracking proffesional development hours to maintain compliance to or for Engineers Australia Charted Engineering.
+The Engineering Professional Development Tracker (EPDTracker) is an easy-to-use web application for tracking professional development hours to maintain compliance to or for Engineers Australia Charted Engineering.
 EPDTracker is designed to minimise the overhead in tracking courses, books, YouTube videos, Podcasts or any other media, keeping the focus on the training not on record keeping.
 As the tool develops, additional features will be added automatically import training from various sources. At present the tracker reports on manually entered data.
 
@@ -20,7 +20,7 @@ As the tool develops, additional features will be added automatically import tra
 
 - **Record and Track Valid Hours:** The application keeps a detailed record of development hours and calculates the validity based on the expiration periods of certifications and requirements for maintaining Chartered Engineering Professional status.
 
-### Comming to a tracker near you
+### Coming to a tracker near you
 
 - **Auto Fill training data:** Auto fill training data specific training organisations or types, saving time
 
@@ -47,18 +47,18 @@ Requires python and flask to run, follow the installation instructions below.
 Install steps in here
 1. Clone the gitHub repo
 
-`cd /opt`
-
-`sudo mkdir epdtracker`
-
-<u>Note: </u> depending on the /opt ownership setup, the 'epdtracker' folder will need to be changed to the current user and group.
-
-`git clone https://github.com/microtechno9000/engineering-pd-tracker.git epdtracker`
+    `cd /opt`
+    
+    `sudo mkdir epdtracker`
+    
+    <u>Note: </u> depending on the /opt ownership setup, the 'epdtracker' folder will need to be changed to the current user and group.
+    
+    `git clone https://github.com/microtechno9000/engineering-pd-tracker.git epdtracker`
 
 2. Install requirements
 
-`sudo pip3 install -r requirements.txt `
+    `sudo pip3 install -r requirements.txt `
 
 3. Run EPDTracker
 
-`python3 tracker.py`
+    `python3 tracker.py`

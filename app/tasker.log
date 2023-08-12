@@ -1,0 +1,6 @@
+[2023-08-12 12:51:47,094] [DEBUG] | __init__.create_app | Loading blueprints
+[2023-08-12 12:51:47,124] [INFO] | _internal._log |  * Running on http://127.0.0.1:7070 (Press CTRL+C to quit)
+[2023-08-12 12:51:47,126] [INFO] | _internal._log |  * Restarting with stat
+[2023-08-12 12:51:48,117] [DEBUG] | __init__.create_app | Loading blueprints
+[2023-08-12 12:51:48,145] [WARNING] | _internal._log |  * Debugger is active!
+[2023-08-12 12:51:48,146] [INFO] | _internal._log |  * Debugger PIN: 999-202-065

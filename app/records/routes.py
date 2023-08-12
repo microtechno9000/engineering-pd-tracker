@@ -24,6 +24,9 @@ def add_record():
 
     if request.method == 'POST':
         record_form.validate_on_submit()
+
+        # app.logger.debug(request.form)
+
         # save data to DB
         return redirect('/records')
     else:

@@ -1,6 +1,6 @@
 """
 Model for the Training EA Division table
-- EAust Training division
+- Engineers Australia Training division
 """
 from app.extensions import db
 

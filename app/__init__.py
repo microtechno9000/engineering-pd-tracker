@@ -5,9 +5,14 @@ from app.extensions import db
 from app.extensions import migrate
 from app.dbmanager import check_init
 from app.extensions import csrf
+from app.logs import setuplog
 
 
 def create_app(config_class=Config):
+    # Configure flask logger
+    # noinspection PyUnusedLocal
+    dictConfig = setuplog(config_class)
+
     # create and configure the app
     app = Flask(__name__)
     app.config.from_object(config_class)
@@ -21,12 +26,8 @@ def create_app(config_class=Config):
     # check database is current
     check_init(app)
 
-    # update the database
-    # with app.app_context():
-    #     logging.info("Updating Alembic")
-    #     flask_migrate.upgrade("/opt/epdtracker/app/migrations")
-
     # Register blueprints here
+    app.logger.debug("Loading blueprints")
     from app.main import blueprint_main
     from app.media import blueprint_media
     from app.records import blueprint_records

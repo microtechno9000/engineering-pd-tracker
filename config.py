@@ -19,6 +19,9 @@ class Config:
     server_port = "7070"
     flask_debug = True
 
+    LOG_DIR = path.join(basedir, 'logs/')
+    LOG_FILENAME = "tasker.log"
+
     # TODO
     # update the code to use config parser and a config file
     # https://docs.python.org/3/library/configparser.html

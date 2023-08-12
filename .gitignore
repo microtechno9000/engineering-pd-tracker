@@ -18,5 +18,5 @@ build/
 .idea
 
 # project
-log/*
+logs/*
 db/*
