@@ -10,7 +10,7 @@ from app.logs import setuplog
 
 def create_app(config_class=Config):
     # Configure flask logger
-    # noinspection PyUnusedLocal
+    # noinspection PyUnusedLocal,PyPep8Naming
     dictConfig = setuplog(config_class)
 
     # create and configure the app

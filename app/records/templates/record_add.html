@@ -11,7 +11,7 @@
                     Title
                 </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="recordTitle" placeholder="Enter Title">
+                    {{ form.recordTitle(class="form-control") }}
                 </div>
             </div>
             <div class="form-group row">
@@ -19,7 +19,7 @@
                     Course Provider
                 </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="recordProvider" placeholder="Enter Provider">
+                    {{ form.recordProvider(class="form-control") }}
                 </div>
             </div>
             <div class="form-group row">
@@ -27,7 +27,7 @@
                     Activity
                 </label>
                 <div class="col-sm-10">
-                    <select id="recordActivity" class="form-control">
+                    <select name="recordActivity" id="recordActivity" class="form-control">
                         <option selected>Select an Activity</option>
                         {% for activity in trg_activity %}
                             <option>{{ activity.activity }}</option>
@@ -40,13 +40,13 @@
                     Start Date
                 </label>
                 <div class="col-sm-4">
-                    <input type="date" class="form-control" id="recordStartDate" value="{{ date_today }}">
+                    {{ form.recordStartDate(class="form-control") }}
                 </div>
                 <label for="recordFinishDate" class="col-sm-2 col-form-label">
                     Finish Date
                 </label>
                 <div class="col-sm-4">
-                    <input type="date" class="form-control" id="recordFinishDate" value="{{ date_today }}">
+                    {{ form.recordFinishDate(class="form-control") }}
                 </div>
             </div>
             <div class="form-group row">
@@ -54,7 +54,7 @@
                     Activity
                 </label>
                 <div class="col-sm-10">
-                    <select id="recordDivision" class="form-control">
+                    <select name="recordDivision" id="recordDivision" class="form-control">
                         <option selected>Select an EA Division</option>
                         {% for division in trg_division %}
                             <option>{{ division.division }}</option>
@@ -64,18 +64,18 @@
             </div>
             <div class="form-group row">
                 <label for="recordLocation" class="col-sm-2 col-form-label">
-                    Course Provider
+                    Course Location
                 </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="recordLocation" placeholder="Enter Location">
+                    <input type="text" class="form-control" name="recordLocation" id="recordLocation" placeholder="Enter Location">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="recordType" class="col-sm-2 col-form-label">
-                    Activity
+                    Training Type
                 </label>
                 <div class="col-sm-10">
-                    <select id="recordType" class="form-control">
+                    <select name="recordType" id="recordType" class="form-control">
                         <option selected>Select Training Type</option>
                         {% for type in trg_type %}
                             <option>{{ type.type }}</option>
@@ -88,35 +88,35 @@
                     Risk Management
                 </label>
                 <div class="col-sm-2">
-                    <input type="number" class="form-control" id="recordTimeRisk" min="0" max="200">
+                    <input type="text" class="form-control" name="recordTimeRisk" id="recordTimeRisk" placeholder="0:0:0">
                 </div>
-                <label for="recordTimeMgmt" class="col-sm-2 col-form-label">
+                <label for="recordTimeBusiness" class="col-sm-2 col-form-label">
                     Business Management
                 </label>
                 <div class="col-sm-2">
-                    <input type="number" class="form-control" id="recordTimeMgmt" min="0" max="200">
+                    <input type="text" class="form-control" name="recordTimeBusiness" id="recordTimeBusiness" placeholder="0:0:0">
                 </div>
                 <label for="recordTimeAop" class="col-sm-2 col-form-label">
                     Area of Practice
                 </label>
                 <div class="col-sm-2">
-                    <input type="number" class="form-control" id="recordTimeAop" min="0" max="200">
+                    <input type="text" class="form-control" name="recordTimeAop" id="recordTimeAop" placeholder="0:0:0">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="recordDescription" class="col-sm-2 col-form-label">
-                    Activity
+                    Description
                 </label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="recordDescription" placeholder="Enter Description of the Training" rows="3"></textarea>
+                    <textarea class="form-control" name="recordDescription" id="recordDescription" placeholder="Enter Description of the Training" rows="3"></textarea>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="recordNotes" class="col-sm-2 col-form-label">
-                    Activity
+                    Notes
                 </label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="recordNotes" placeholder="Enter any personal notes" rows="3"></textarea>
+                    <textarea class="form-control" name="recordNotes" id="recordNotes" placeholder="Enter any personal notes" rows="3"></textarea>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

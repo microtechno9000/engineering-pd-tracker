@@ -18,10 +18,10 @@
                         </div>
                         <div class="card-body">
                             <h6 class="card-subtitle mb-2 text-muted">
-                                Organisation |
-                                Activity |
-                                EA Division |
-                                Training Type
+                                {{ record.training_provider }} |
+                                {{ record.training_activity.activity }} |
+                                {{ record.training_division.division }} |
+                                {{ record.training_type.type }}
                             </h6>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">

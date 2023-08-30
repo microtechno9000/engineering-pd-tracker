@@ -24,21 +24,22 @@ def upgrade() -> None:
         sa.Column('date_finish', sa.Date),
         sa.Column('date_expire', sa.Date),
         sa.Column('record_valid', sa.Boolean),
-        sa.Column('title', sa.String(100)),
-        sa.Column('description', sa.String(500)),
+        sa.Column('title', sa.String(200)),
+        sa.Column('description', sa.String(5000)),
+        sa.Column('notes', sa.String(5000)),
+        sa.Column('training_provider', sa.String(100)),
+        sa.Column('training_location', sa.String(100)),
         sa.Column('duration', sa.Time),
         sa.Column('duration_risk', sa.Time),
         sa.Column('duration_business', sa.Time),
         sa.Column('duration_practice', sa.Time),
         sa.Column('training_activity_id', sa.Integer, nullable=True),
         sa.Column('training_type_id', sa.Integer, nullable=True),
-        sa.Column('training_provider_id', sa.Integer, nullable=True),
-        sa.Column('training_location_id', sa.Integer, nullable=True),
+        sa.Column('training_division_id', sa.String(500)),
 
         sa.ForeignKeyConstraint(['training_activity_id'], ['training_activity.id'], ),
         sa.ForeignKeyConstraint(['training_type_id'], ['training_type.id'], ),
-        sa.ForeignKeyConstraint(['training_provider_id'], ['training_provider.id'], ),
-        sa.ForeignKeyConstraint(['training_location_id'], ['training_location.id'], )
+        sa.ForeignKeyConstraint(['training_division_id'], ['training_division.id'], )
     )
 
 
