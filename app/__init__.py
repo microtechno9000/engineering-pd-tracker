@@ -32,9 +32,11 @@ def create_app(config_class=Config):
     from app.media import blueprint_media
     from app.records import blueprint_records
     from app.settings import blueprint_settings
+    from app.about import blueprint_about
     app.register_blueprint(blueprint_main)
     app.register_blueprint(blueprint_media)
     app.register_blueprint(blueprint_records)
     app.register_blueprint(blueprint_settings)
+    app.register_blueprint(blueprint_about)
 
     return app

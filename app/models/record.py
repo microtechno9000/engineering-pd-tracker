@@ -4,7 +4,9 @@ Model for the records table
 from app.extensions import db
 
 
+# noinspection SpellCheckingInspection
 class Record(db.Model):
+    # noinspection SpellCheckingInspection
     __tablename__ = "record"
 
     id = db.Column(db.Integer, primary_key=True)
