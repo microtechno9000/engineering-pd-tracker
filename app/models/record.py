@@ -38,3 +38,6 @@ class Record(db.Model):
     def __init__(self):
         # set to true for new records, assumes they are still valid
         self.record_valid = True
+
+    def __repr__(self):
+        return self.id

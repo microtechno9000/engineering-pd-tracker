@@ -7,42 +7,48 @@
         <div>
             Create a <a href="/record-add">New Training Record</a>
         </div>
+        <br>
         <div>
             {% if not records %}
                 <p> ... no records found. Looks like you need some training young padawan. </p>
             {% else %}
                 {% for record in records %}
-                    <div class="card" style="width: 80%">
-                        <div class="card-header">
-                            {{ record.title }}
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-subtitle mb-2 text-muted">
-                                {{ record.training_provider }} |
-                                {{ record.training_activity.activity }} |
-                                {{ record.training_division.division }} |
-                                {{ record.training_type.type }}
-                            </h6>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <u>Start Date:</u> {{ record.date_start }} |
-                                    <u>Finish Date:</u> {{ record.date_finish }} |
-                                    <u>Duration:</u> {{ record.duration }}
-                                </li>
-                                <li class="list-group-item">
-                                    <u>Risk:</u> {{ record.duration_risk }} |
-                                    <u>Business:</u> {{ record.duration_business }} |
-                                    <u>Related Practice:</u> {{ record.duration_practice }}
-                                </li>
-                                <li class="list-group-item">
-                                    <h6 class="mb-2 text-muted"> Description </h6>
-                                    <p class="card-text">{{ record.description }}</p>
-                                </li>
-                                <li class="list-group-item">
-                                    <h6 class="mb-2 text-muted"> Notes </h6>
-                                    <p class="card-text">users notes</p>
-                                </li>
-                            </ul>
+                    <div class="d-flex flex-row justify-content-center">
+                        <div class="card flex-column col">
+                            <div class="card-header">
+                                {{ record.title }}
+                                <span class="align-content-end">
+                                    <a href="record/{{ record.id }}">Edit</a>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    {{ record.training_provider }} |
+                                    {{ record.training_activity.activity }} |
+                                    {{ record.training_division.division }} |
+                                    {{ record.training_type.type }}
+                                </h6>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <u>Start Date:</u> {{ record.date_start }} |
+                                        <u>Finish Date:</u> {{ record.date_finish }} |
+                                        <u>Duration:</u> {{ record.duration }}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <u>Risk:</u> {{ record.duration_risk }} |
+                                        <u>Business:</u> {{ record.duration_business }} |
+                                        <u>Related Practice:</u> {{ record.duration_practice }}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6 class="mb-2 text-muted"> Description </h6>
+                                        <p class="card-text">{{ record.description }}</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6 class="mb-2 text-muted"> Notes </h6>
+                                        <p class="card-text">users notes</p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <br>

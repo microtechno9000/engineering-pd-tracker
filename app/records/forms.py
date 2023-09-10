@@ -2,7 +2,7 @@
 Forms handler for records
 """
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, SubmitField, TextAreaField, SelectField
 from wtforms.validators import InputRequired
 from wtforms.fields import DateField
 
@@ -11,17 +11,20 @@ class FormRecord(FlaskForm):
     """
     New Record form
     """
-    recordTitle = StringField('recordTitle', validators=[InputRequired()])
-    recordProvider = StringField('recordProvider', validators=[InputRequired()])
-    recordActivity = StringField('recordActivity', validators=[InputRequired()])
-    recordStartDate = DateField('recordStartDate', format='%Y-%m-%d', validators=[InputRequired()])
-    recordFinishDate = DateField('recordFinishDate', format='%Y-%m-%d', validators=[InputRequired()])
-    recordDivision = StringField('recordDivision', validators=[InputRequired()])
-    recordLocation = StringField('recordLocation', validators=[InputRequired()])
-    recordType = StringField('recordType', validators=[InputRequired()])
-    recordTimeRisk = StringField('recordTimeRisk', validators=[InputRequired()])
-    recordTimeMgmt = StringField('recordTimeMgmt', validators=[InputRequired()])
-    recordTimeAop = StringField('recordTimeAop', validators=[InputRequired()])
-    recordDescription = StringField('recordDescription', validators=[InputRequired()])
-    recordNotes = StringField('recordNotes', validators=[InputRequired()])
+    title = StringField('Title', validators=[InputRequired()])
+    training_provider = StringField('training_provider', validators=[InputRequired()])
+    date_start = DateField('Training Start Date',
+                           format='%Y-%m-%d', validators=[InputRequired()])
+    date_finish = DateField('Training Finish Date',
+                            format='%Y-%m-%d', validators=[InputRequired()])
+    training_location = StringField('training_location', validators=[InputRequired()])
+    duration_risk = StringField('duration_risk', validators=[InputRequired()])
+    duration_business = StringField('duration_business', validators=[InputRequired()])
+    duration_practice = StringField('duration_practice', validators=[InputRequired()])
+    description = TextAreaField('Training Description')
+    notes = TextAreaField('Training Notes')
+    training_activity_id = SelectField("Select an Activity", coerce=str)
+    training_type_id = SelectField("Select a Type", coerce=str)
+    training_division_id = SelectField("Select an EA Division", coerce=str)
+
     submit = SubmitField('Submit')
