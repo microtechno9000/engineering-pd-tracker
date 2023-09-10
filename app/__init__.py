@@ -11,7 +11,7 @@ from app.logs import setuplog
 def create_app(config_class=Config):
     # Configure flask logger
     # noinspection PyUnusedLocal,PyPep8Naming
-    dictConfig = setuplog(config_class)
+    dictConfig = setuplog(config_class)             # noqa: F841
 
     # create and configure the app
     app = Flask(__name__)
