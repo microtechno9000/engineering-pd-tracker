@@ -1,6 +1,8 @@
-Alembic==1.11.1
+Alembic==1.11.2
 Flask==2.3.2
 Flask-Alembic==2.0.1
 Flask-Migrate==4.0.4
+Flask-WTF==1.1.1
 python-dotenv==1.0.0
-sqlalchemy==2.0.17
+sqlalchemy==2.0.19
+WTForms==3.0.1

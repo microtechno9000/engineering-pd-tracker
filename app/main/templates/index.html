@@ -5,10 +5,20 @@
 {% block content %}
     <div class="container-fluid h-100 mx-auto">
         <div style="padding: 10%">
-            <p> Welcome to EPDTracker, the ultimate solution for engineers in Australia seeking to maintain their Chartered Engineering Professional status or CPEng. Our innovative platform is specifically designed to track and manage your professional development hours, ensuring you stay up-to-date, relevant, and compliant.</p>
-            <p>EPDTracker takes the hassle out of managing your engineering professional development. With our intuitive interface and powerful features, you can effortlessly log and monitor your development activities, including seminars, workshops, training programs, and more. Say goodbye to tedious spreadsheets and paperwork—EPDTracker keeps all your records organized in one secure location.</p>
-            <p>Never miss an important deadline or let your certifications lapse. EPDTracker provides timely reminders and notifications, alerting you when it's time to update your professional development hours or renew your certifications. Our advanced tracking system ensures you are always aware of the currency and validity of your professional development, enabling you to maintain your professional standing with ease.</p>
-            <p>Take control of your engineering professional development with EPDTracker. Join our growing community of engineers who rely on our platform to stay ahead in their careers. Sign up today and unlock a world of opportunities for growth, recognition, and professional excellence.</p>
+            <h3> Engineering Professional Development Tracker - EPDt</h3>
+        </div>
+        <div class="d-flex flex-row justify-content-center">
+            <div class="flex-column col m-1">
+                {% include 'graph_stats_current.html' %}
+            </div>
+            <div class="flex-column col m-1">
+                {% include 'graph_stats_all.html' %}
+            </div>
+        </div>
+        <div class="d-flex flex-row w-100">
+            <div class="flex-column col m-1">
+                {% include 'graph_current.html' %}
+            </div>
         </div>
     </div>
 {% endblock %}
